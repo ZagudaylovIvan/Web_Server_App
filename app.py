@@ -36,14 +36,10 @@ def get_tag(mac):
     except:
         print('ERROR!')
 
-    data = cur.fetchone()
-    t = data
-    separator = ' '
-    output = separator.join(t)
-    data = output
-    return render_template("index.html", img_tag=data)
+    rows = cur.fetchall()
     cur.close()
     conn.close()
+    return render_template("index.html", rows=rows)
 
 
 if __name__ == '__main__':

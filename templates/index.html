@@ -7,6 +7,10 @@
 
 </head>
 <body>
-<img src="data:image/png;base64,{{img_tag}}" alt="Ценник">
+<table width="auto">
+ {% for row in rows %}
+        <th><img src="data:image/png;base64,{{row[0]}}" alt="Ценник"></th>
+    {% endfor %}
+ </table>
 </body>
 </html>
